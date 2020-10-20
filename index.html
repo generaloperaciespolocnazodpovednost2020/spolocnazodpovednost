@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <title>NAŠA Spoločná Zodpovednosť</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=VT323&display=swap" rel="stylesheet">
 
     <style>
+        *,::after,::before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
         body {
             padding: 0;
-            margin: 0;
-
-            /*background-image: url(images/mission-control.jpg);*/
-            background-size: contain;
-            background-position: top center;
+            margin: 0 0 100px 0;
             background-color: #262d22;
-
-            margin-bottom: 300px;
         }
 
         header {
@@ -28,7 +29,7 @@
             font-family: 'Saira Stencil One', cursive;
             font-size: 72px;
             line-height: 1;
-            margin: 40px;
+            margin: 40px 15px;
             padding: 0;
             color: white;
             display: inline-block;
@@ -45,10 +46,57 @@
             text-align: left;
         }
 
+        @media (max-width: 830px) {
+            h1 {
+                font-size: 54px
+            }
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 54px
+            }
+
+            h1 span {
+                display: block;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            header {
+                text-align: center;
+                padding-bottom: 0;
+            }
+
+            img {
+                position: relative;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            h1 {
+                font-size: 42px
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 img {
+                width: 150px;
+            }
+
+            h1 {
+                font-size: 36px
+            }
+        }
+
         table {
             margin: 0 auto;
             max-width: 800px;
             border-collapse: collapse;
+            width: 100%;
+            table-layout:fixed;
         }
 
         th, td {
@@ -61,7 +109,7 @@
         th {
             text-align: left;
             border-bottom: 3px dotted #535353;
-            padding: 10px 40px 8px 0;
+            padding: 10px 20px 8px 0;
             vertical-align: bottom;
             color: #beffbe;
         }
@@ -72,6 +120,7 @@
             white-space: nowrap;
             vertical-align: middle;
             border-bottom: 3px dotted #535353;
+            width: 130px;
         }
 
         tr.no-go th {
@@ -111,6 +160,46 @@
             color: white;
             border: none;
         }
+
+        tr.empty-row {
+            font-size: 1px;
+        }
+
+        tr.empty-row td,
+        tr.empty-row th {
+            border: none;
+            padding: 0;
+        }
+
+        @media (max-width: 700px) {
+            th, td {
+                font-size: 32px;
+            }
+
+            td {
+                width: 60px;
+            }
+
+            tr.large.no-go th,
+            tr.large td {
+                font-size: 52px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            th, td {
+                font-size: 24px;
+            }
+
+            td {
+                width: 60px;
+            }
+
+            tr.large.no-go th,
+            tr.large td {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,14 +210,20 @@
     </h1>
 </header>
 
+<div style="padding: 15px; margin: 0 auto;">
 <table>
-    <tr class="no-go large">
+    <tr class="empty-row">
         <th>
-            STATUS OPERÁCIE:
+
         </th>
         <td>
-            NO-GO
+
         </td>
+    </tr>
+    <tr class="no-go large">
+        <th colspan="2">
+            STATUS OPERÁCIE: <span style="white-space: nowrap">NO-GO</span>
+        </th>
     </tr>
     <tr class="systems">
         <th colspan="2">
@@ -177,7 +272,7 @@
     </tr>
     <tr class="no-go">
         <th>
-            Pozitívne motivácie občanov na účasť na testovaní
+            Pozitívne motivovanie občanov na účasť na testovaní
         </th>
         <td>
             NO-GO
@@ -297,7 +392,7 @@
     </tr>
     <tr class="no-go">
         <th>
-            Vecne, pokojná a kultivovaná komunikácia na sociálnych sieťach
+            Vecná, pokojná a kultivovaná komunikácia na sociálnych sieťach
         </th>
         <td>
             NO-GO
@@ -312,5 +407,7 @@
         </td>
     </tr>
 </table>
+</div>
+
 </body>
 </html>
